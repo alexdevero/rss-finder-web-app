@@ -7,8 +7,10 @@
   "browserslist": {
     "production": [
       ">0.2%",
+      "last 6 versions",
       "not dead",
-      "not op_mini all"
+      "not op_mini all",
+      "ie >= 11"
     ],
     "development": [
       "last 1 chrome version",
