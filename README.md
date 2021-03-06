@@ -47,13 +47,13 @@ yarn
 #### Run the web app
 
 ```bash
-npm run start
+npm run dev
 ```
 
 or
 
 ```bash
-yarn run start
+yarn run dev
 ```
 
 #### Build the web app
