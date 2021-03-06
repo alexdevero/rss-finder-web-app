@@ -25,6 +25,8 @@
   "dependencies": {
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-ga": "^3.3.0",
+    "rss-finder": "^2.1.5",
     "web-vitals": "^1.0.1"
   },
   "devDependencies": {
