@@ -12,6 +12,7 @@
 /build
 
 # misc
+__ignore__/
 .DS_Store
 .env.local
 .env.development.local
