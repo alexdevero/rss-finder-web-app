@@ -1,7 +1,5 @@
 import { useState } from 'react'
 
-import logo from './../images/rss-icon.svg'
-
 interface feedUrlUI {
   title: string;
   url: string;
