@@ -2,6 +2,8 @@ import { useState } from 'react'
 import axios from 'axios'
 import sanitizeHtml from 'sanitize-html'
 
+import { AppHeader } from './app-header'
+
 interface FeedUI {
   title: string;
   url: string;
@@ -51,11 +53,7 @@ export function App() {
     <div className="container pt-4">
       <div className="row justify-content-center">
         <div className="col-sm-10 col-md-7 col-lg-6 col-xl-5">
-          <header>
-            <img src="/images/rss-icon.svg" className="app-logo mx-auto d-block mb-4" alt="logo" width="100" />
-
-            <h1 className="h3 text-center mb-4">RSS Finder</h1>
-          </header>
+          <AppHeader />
 
           <div className="input-group mb-4">
             <label htmlFor="urlInput" className="input-group-text">
