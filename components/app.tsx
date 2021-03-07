@@ -40,7 +40,7 @@ export function App() {
   const handleFeedURsFetching = () => {
     if (websiteURL.length > 0) {
       axios.post('/api/rss-finder', { websiteUrl: websiteURL })
-        .then((response: ResponseUI | ResponseErrorUI) => {
+        .then((response /* : ResponseUI | ResponseErrorUI */) => {
           if (response.data.feeds) {
             setFeeds(response.data.feeds)
             setError('')
