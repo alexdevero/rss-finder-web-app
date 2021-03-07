@@ -15,12 +15,6 @@ interface ResponseUI {
   }
 }
 
-interface ResponseErrorUI {
-  data: {
-    message: string;
-  }
-}
-
 export function App() {
   const [feeds, setFeeds] = useState<FeedUI[]>([])
   const [websiteURL, setWebsiteURL] = useState('')
@@ -40,13 +34,9 @@ export function App() {
   const handleFeedURsFetching = () => {
     if (websiteURL.length > 0) {
       axios.post('/api/rss-finder', { websiteUrl: websiteURL })
-        .then((response /* : ResponseUI | ResponseErrorUI */) => {
-          if (response.data.feeds) {
-            setFeeds(response.data.feeds)
-            setError('')
-          } else if (response.body.message) {
-            setError(response.body.message)
-          }
+        .then((response: ResponseUI) => {
+          setFeeds(response.data.feeds)
+          setError('')
         })
         .catch((error) => {
           console.log('error: ', JSON.stringify(error, null, ' '))
