@@ -15,6 +15,12 @@ interface ResponseUI {
   }
 }
 
+interface ResponseErrorUI {
+  data: {
+    message: string;
+  }
+}
+
 export function App() {
   const [feeds, setFeeds] = useState<FeedUI[]>([])
   const [websiteURL, setWebsiteURL] = useState('')
@@ -34,7 +40,7 @@ export function App() {
   const handleFeedURsFetching = () => {
     if (websiteURL.length > 0) {
       axios.post('/api/rss-finder', { websiteUrl: websiteURL })
-        .then((response: ResponseUI) => {
+        .then((response: ResponseUI | ResponseErrorUI) => {
           if (response.data.feeds) {
             setFeeds(response.data.feeds)
             setError('')
