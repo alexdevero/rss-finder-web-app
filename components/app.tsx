@@ -16,7 +16,7 @@ interface ResponseUI {
 }
 
 export function App() {
-  const [feeds, setFeeds] = useState<string[]>([])
+  const [feeds, setFeeds] = useState<FeedUI[]>([])
   const [websiteURL, setWebsiteURL] = useState('')
   const [error, setError] = useState('')
 
