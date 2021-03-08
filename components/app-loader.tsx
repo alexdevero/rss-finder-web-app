@@ -1,6 +1,6 @@
 export const AppLoader = () => (
   <div className="d-flex justify-content-center py-2">
-    <div class="loader">
+    <div className="loader">
       <div />
       <div />
       <div />
