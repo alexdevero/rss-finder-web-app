@@ -2,6 +2,7 @@ import { useState } from 'react'
 import axios from 'axios'
 import sanitizeHtml from 'sanitize-html'
 
+import { AppFormButton } from './app-form-button'
 import { AppForm } from './app-form'
 import { AppHeader } from './app-header'
 
@@ -75,9 +76,10 @@ export function App() {
             />
           </div> */}
 
-          <div className="text-center">
+          <AppFormButton handleFeedURsFetching={handleFeedURsFetching} />
+          {/* <div className="text-center">
             <button className="btn btn-primary" onClick={handleFeedURsFetching}>Get feed URLs</button>
-          </div>
+          </div> */}
 
           {feeds.length > 0 && (
             <div className="app-feeds-list mt-4">
