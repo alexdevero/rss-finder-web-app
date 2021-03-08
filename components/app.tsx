@@ -60,45 +60,14 @@ export function App() {
             handleURLInput={handleURLInput}
           />
 
-          {/* <div className="input-group mb-4">
-            <label htmlFor="urlInput" className="input-group-text">
-              <i className="bi bi-link-45deg" />
-            </label>
-
-            <input
-              type="text"
-              name="urlInput"
-              id="urlInput"
-              className="form-control"
-              placeholder="Enter website URL (without http:// or https://)"
-              aria-label="Website URL"
-              aria-describedby="urlInput"
-              defaultValue={websiteURL}
-              onChange={(event) => handleURLInput(event.target.value)}
-            />
-          </div> */}
-
           <AppFormButton handleFeedURsFetching={handleFeedURsFetching} />
-          {/* <div className="text-center">
-            <button className="btn btn-primary" onClick={handleFeedURsFetching}>Get feed URLs</button>
-          </div> */}
 
           {feeds.length > 0 && (
             <AppFeeds feeds={feeds} />
-            /* <div className="app-feeds-list mt-4">
-              <h2 className="h5 mb-2">Found RSS feeds:</h2>
-
-              <ul className="list-unstyled">
-                {feeds.map((feedUrl: FeedUI, index: number) => {
-                  return <li key={index}>{feedUrl.url}</li>
-                })}
-              </ul>
-            </div> */
           )}
 
           {error.length > 0 && (
             <AppError error={error} />
-            /* <div>{error}</div> */
           )}
         </div>
       </div>
