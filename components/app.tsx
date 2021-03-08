@@ -2,6 +2,7 @@ import { useState } from 'react'
 import axios from 'axios'
 import sanitizeHtml from 'sanitize-html'
 
+import { AppFeeds } from './app-feeds'
 import { AppFormButton } from './app-form-button'
 import { AppForm } from './app-form'
 import { AppHeader } from './app-header'
@@ -82,7 +83,8 @@ export function App() {
           </div> */}
 
           {feeds.length > 0 && (
-            <div className="app-feeds-list mt-4">
+            <AppFeeds feeds={feeds} />
+            /* <div className="app-feeds-list mt-4">
               <h2 className="h5 mb-2">Found RSS feeds:</h2>
 
               <ul className="list-unstyled">
@@ -90,7 +92,7 @@ export function App() {
                   return <li key={index}>{feedUrl.url}</li>
                 })}
               </ul>
-            </div>
+            </div> */
           )}
 
           {error.length > 0 && (
