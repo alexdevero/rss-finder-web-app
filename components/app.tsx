@@ -4,8 +4,9 @@ import sanitizeHtml from 'sanitize-html'
 
 import { AppError } from './app-error'
 import { AppFeeds } from './app-feeds'
-import { AppFormButton } from './app-form-button'
+import { AppFooter } from './app-footer'
 import { AppForm } from './app-form'
+import { AppFormButton } from './app-form-button'
 import { AppHeader } from './app-header'
 import { AppLoader } from './app-loader'
 
@@ -51,8 +52,8 @@ export function App() {
   }
 
   return (
-    <div className="container pt-4">
-      <div className="row justify-content-center">
+    <div className="container pt-5">
+      <div className="app-main-content row justify-content-center">
         <div className="col-sm-10 col-md-7 col-lg-6 col-xl-5">
           <AppHeader />
 
@@ -76,6 +77,8 @@ export function App() {
           )}
         </div>
       </div>
+
+      <AppFooter />
     </div>
   )
 }

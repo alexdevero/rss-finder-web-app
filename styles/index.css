@@ -1,8 +1,18 @@
 html,
 body,
-#root,
-#root > .container {
+#__next,
+#__next > .container {
   min-height: 100vh;
+}
+
+#__next > .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.app-main-content {
+  flex-grow: 1;
 }
 
 body {
