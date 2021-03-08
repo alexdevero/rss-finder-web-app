@@ -2,6 +2,7 @@ import { useState } from 'react'
 import axios from 'axios'
 import sanitizeHtml from 'sanitize-html'
 
+import { AppError } from './app-error'
 import { AppFeeds } from './app-feeds'
 import { AppFormButton } from './app-form-button'
 import { AppForm } from './app-form'
@@ -96,7 +97,8 @@ export function App() {
           )}
 
           {error.length > 0 && (
-            <div>{error}</div>
+            <AppError error={error} />
+            /* <div>{error}</div> */
           )}
         </div>
       </div>
