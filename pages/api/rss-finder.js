@@ -6,7 +6,7 @@ export default async (req, res) => {
     rssFinder(req.body.websiteUrl)
       .then((data) => {
         res.status(200).json({
-          feeds: data.feedUrls
+          feeds: data.feedUrls || []
         })
       })
       .catch((err) => {
