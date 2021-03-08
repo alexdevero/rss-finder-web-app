@@ -1,6 +1,4 @@
-interface AppFormButtonUI {
-  handleFeedURsFetching: () => void;
-}
+import { AppFormButtonUI } from './../interfaces/interfaces'
 
 export const AppFormButton = (props: AppFormButtonUI) => (
   <div className="text-center">

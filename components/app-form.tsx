@@ -1,7 +1,4 @@
-interface AppFormUI {
-  websiteURL: string;
-  handleURLInput: (url: string) => void;
-}
+import { AppFormUI } from './../interfaces/interfaces'
 
 export const AppForm = (props: AppFormUI) => (
   <div className="input-group mb-4">

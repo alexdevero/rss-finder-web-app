@@ -8,16 +8,7 @@ import { AppFormButton } from './app-form-button'
 import { AppForm } from './app-form'
 import { AppHeader } from './app-header'
 
-interface FeedUI {
-  title: string;
-  url: string;
-}
-
-interface ResponseUI {
-  data: {
-    feeds: FeedUI[];
-  }
-}
+import { FeedUI, ResponseUI } from './../interfaces/interfaces'
 
 export function App() {
   const [feeds, setFeeds] = useState<FeedUI[]>([])

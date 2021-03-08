@@ -1,13 +1,6 @@
-interface FeedUI {
-  title: string;
-  url: string;
-}
+import { FeedUI, AppFeedsUI } from './../interfaces/interfaces'
 
-interface AppFeeds {
-  feeds: FeedUI[]
-}
-
-export const AppFeeds = (props: AppFeeds) => (
+export const AppFeeds = (props: AppFeedsUI) => (
   <div className="app-feeds-list mt-4">
     <h2 className="h5 mb-2">Found RSS feeds:</h2>
 
