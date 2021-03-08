@@ -31,7 +31,10 @@ export function App() {
       axios.post('/api/rss-finder', { websiteUrl: websiteURL })
         .then((response: ResponseUI) => {
           setFeeds(response.data.feeds)
-          setError('')
+
+          if (response.data.feeds.length === 0) {
+            setError('No RSS feeds found.')
+          }
         })
         .catch((error) => {
           console.log('error: ', JSON.stringify(error, null, ' '))
