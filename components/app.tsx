@@ -7,6 +7,7 @@ import { AppFeeds } from './app-feeds'
 import { AppFormButton } from './app-form-button'
 import { AppForm } from './app-form'
 import { AppHeader } from './app-header'
+import { AppLoader } from './app-loader'
 
 import { FeedUI, ResponseUI } from './../interfaces/interfaces'
 
@@ -14,6 +15,7 @@ export function App() {
   const [feeds, setFeeds] = useState<FeedUI[]>([])
   const [websiteURL, setWebsiteURL] = useState('')
   const [error, setError] = useState('')
+  const [isLoaderVisible, setIsLoaderVisible] = useState(false)
 
   const handleURLInput = (url: string) => {
     let urlSanitized = sanitizeHtml(url)
@@ -28,6 +30,8 @@ export function App() {
 
   const handleFeedURsFetching = () => {
     if (websiteURL.length > 0) {
+      setIsLoaderVisible(true)
+
       axios.post('/api/rss-finder', { websiteUrl: websiteURL })
         .then((response: ResponseUI) => {
           setFeeds(response.data.feeds)
@@ -39,6 +43,9 @@ export function App() {
         .catch((error) => {
           console.log('error: ', JSON.stringify(error, null, ' '))
           setError('No RSS feeds found.')
+        })
+        .finally(() => {
+          setIsLoaderVisible(false)
         })
     }
   }
@@ -55,6 +62,10 @@ export function App() {
           />
 
           <AppFormButton handleFeedURsFetching={handleFeedURsFetching} />
+
+          {isLoaderVisible && (
+            <AppLoader />
+          )}
 
           {feeds.length > 0 && (
             <AppFeeds feeds={feeds} />
