@@ -2,6 +2,7 @@ import { useState } from 'react'
 import axios from 'axios'
 import sanitizeHtml from 'sanitize-html'
 
+import { AppForm } from './app-form'
 import { AppHeader } from './app-header'
 
 interface FeedUI {
@@ -51,7 +52,12 @@ export function App() {
         <div className="col-sm-10 col-md-7 col-lg-6 col-xl-5">
           <AppHeader />
 
-          <div className="input-group mb-4">
+          <AppForm
+            websiteURL={websiteURL}
+            handleURLInput={handleURLInput}
+          />
+
+          {/* <div className="input-group mb-4">
             <label htmlFor="urlInput" className="input-group-text">
               <i className="bi bi-link-45deg" />
             </label>
@@ -67,7 +73,7 @@ export function App() {
               defaultValue={websiteURL}
               onChange={(event) => handleURLInput(event.target.value)}
             />
-          </div>
+          </div> */}
 
           <div className="text-center">
             <button className="btn btn-primary" onClick={handleFeedURsFetching}>Get feed URLs</button>
