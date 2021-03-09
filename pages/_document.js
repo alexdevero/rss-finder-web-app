@@ -25,7 +25,7 @@ class MyDocument extends Document {
           <link rel='apple-touch-icon' sizes='180x180' href='/icons/apple-touch-icon.png' />
           <link rel='icon' type='image/png' sizes='32x32' href='/icons/favicon-32x32.png' />
           <link rel='icon' type='image/png' sizes='16x16' href='/icons/favicon-16x16.png' />
-          <link rel='manifest' href='/icons/site.webmanifest.json' />
+          <link rel='manifest' href='/icons/site.webmanifest' />
           <link rel='mask-icon' href='/icons/safari-pinned-tab.svg' color='#5bbad5' />
           <link rel='shortcut icon' href='/icons/favicon.ico' />
 
@@ -50,7 +50,7 @@ class MyDocument extends Document {
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta2/css/bootstrap.min.css" integrity="sha512-aqT9YD5gLuLBr6ipQAS+72o5yHKzgZbGxEh6iY8lW/r6gG14e2kBTAJb8XrxzZrMOgSmDqtLaF76T0Z6YY2IHg==" crossOrigin="anonymous" />
         </Head>
 
-        <body>
+        <body className="bg-light">
           <Main />
 
           <NextScript />
