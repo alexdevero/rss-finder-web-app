@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import { GlobalState } from './../state/state'
 
-export const AppFooter = (props: AppFooterUI) => {
+export const AppFooter = () => {
   const { state } = useContext(GlobalState)
 
   return (
