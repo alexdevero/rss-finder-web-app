@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import axios from 'axios'
 import sanitizeHtml from 'sanitize-html'
 
@@ -12,12 +12,14 @@ import { AppLoader } from './app-loader'
 
 import { FeedUI, ResponseUI } from './../interfaces/interfaces'
 
+import { GlobalState } from './../state/state'
+
 export function App() {
   const [feeds, setFeeds] = useState<FeedUI[]>([])
   const [websiteURL, setWebsiteURL] = useState('')
   const [error, setError] = useState('')
   const [isLoaderVisible, setIsLoaderVisible] = useState(false)
-  const [isDarkModeOn, setIsDarkModeOn] = useState(false)
+  const { state, handleDarkMode } = useContext(GlobalState)
 
   const handleURLInput = (url: string) => {
     let urlSanitized = sanitizeHtml(url)
@@ -52,17 +54,11 @@ export function App() {
     }
   }
 
-  const handleDarkMode = () => {
-    setIsDarkModeOn(!isDarkModeOn)
-
-    document.body.classList.toggle('mode-dark')
-  }
-
   return (
     <div className="container">
       <div className="d-flex justify-content-end py-3">
-        <button className={`btn btn-link ${isDarkModeOn ? 'link-light' : 'link-dark'}`} onClick={handleDarkMode}>
-          <span className={`h5 bi bi-lightbulb${isDarkModeOn ? '' : '-fill'}`} />
+        <button className={`btn btn-link ${state.isDarkModeOn ? 'link-light' : 'link-dark'}`} onClick={handleDarkMode}>
+          <span className={`h5 bi bi-lightbulb${state.isDarkModeOn ? '' : '-fill'}`} />
         </button>
       </div>
 
@@ -72,7 +68,6 @@ export function App() {
           <AppHeader />
 
           <AppForm
-            isDarkModeOn={isDarkModeOn}
             websiteURL={websiteURL}
             handleURLInput={handleURLInput}
           />
@@ -93,9 +88,7 @@ export function App() {
         </div>
       </div>
 
-      <AppFooter
-        isDarkModeOn={isDarkModeOn}
-      />
+      <AppFooter />
     </div>
   )
 }
