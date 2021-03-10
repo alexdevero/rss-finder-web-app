@@ -50,7 +50,7 @@ class MyDocument extends Document {
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta2/css/bootstrap.min.css" integrity="sha512-aqT9YD5gLuLBr6ipQAS+72o5yHKzgZbGxEh6iY8lW/r6gG14e2kBTAJb8XrxzZrMOgSmDqtLaF76T0Z6YY2IHg==" crossOrigin="anonymous" />
         </Head>
 
-        <body className="bg-light">
+        <body>
           <Main />
 
           <NextScript />

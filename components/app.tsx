@@ -17,6 +17,7 @@ export function App() {
   const [websiteURL, setWebsiteURL] = useState('')
   const [error, setError] = useState('')
   const [isLoaderVisible, setIsLoaderVisible] = useState(false)
+  const [isDarkModeOn, setIsDarkModeOn] = useState(false)
 
   const handleURLInput = (url: string) => {
     let urlSanitized = sanitizeHtml(url)
@@ -51,13 +52,27 @@ export function App() {
     }
   }
 
+  const handleDarkMode = () => {
+    setIsDarkModeOn(!isDarkModeOn)
+
+    document.body.classList.toggle('mode-dark')
+  }
+
   return (
-    <div className="container pt-5">
-      <div className="app-main-content row justify-content-center">
+    <div className="container">
+      <div className="d-flex justify-content-end py-3">
+        <button className={`btn btn-link ${isDarkModeOn ? 'link-light' : 'link-dark'}`} onClick={handleDarkMode}>
+          <span className={`h5 bi bi-lightbulb${isDarkModeOn ? '' : '-fill'}`} />
+        </button>
+      </div>
+
+      <div className="app-main-content row justify-content-center pt-5">
         <div className="col-sm-10 col-md-7 col-lg-6 col-xl-5">
+
           <AppHeader />
 
           <AppForm
+            isDarkModeOn={isDarkModeOn}
             websiteURL={websiteURL}
             handleURLInput={handleURLInput}
           />
@@ -78,7 +93,9 @@ export function App() {
         </div>
       </div>
 
-      <AppFooter />
+      <AppFooter
+        isDarkModeOn={isDarkModeOn}
+      />
     </div>
   )
 }

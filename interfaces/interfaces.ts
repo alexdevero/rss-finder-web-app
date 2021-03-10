@@ -18,10 +18,15 @@ export interface ResponseUI {
 }
 
 export interface AppFormUI {
+  isDarkModeOn: boolean;
   websiteURL: string;
   handleURLInput: (url: string) => void;
 }
 
 export interface AppFormButtonUI {
   handleFeedURsFetching: () => void;
+}
+
+export interface AppFooterUI {
+  isDarkModeOn: boolean;
 }

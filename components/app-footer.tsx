@@ -1,4 +1,6 @@
-export const AppFooter = () => (
+import { AppFooterUI } from './../interfaces/interfaces'
+
+export const AppFooter = (props: AppFooterUI) => (
   <footer className="pb-3">
     <ul className="list-unstyled d-flex justify-content-center">
       <li className="me-3">
@@ -32,6 +34,12 @@ export const AppFooter = () => (
       </li>
     </ul>
 
-    <p className="h6 font-weight-normal text-center pt-1">Created by <a href="https://devero.io" target="_blank" rel="noopener noreferrer" className="link-dark">Alex Devero</a>, <a href="https://devero.io" target="_blank" rel="noopener noreferrer" className="link-dark">Devero Corp.</a></p>
+    <p className="h6 font-weight-normal text-center pt-1">
+      Created by
+      {' '}
+      <a href="https://devero.io" target="_blank" rel="noopener noreferrer" className={`link-${props.isDarkModeOn ? 'light' : 'dark'}`}>Alex Devero</a>,
+      {' '}
+      <a href="https://devero.io" target="_blank" rel="noopener noreferrer" className={`link-${props.isDarkModeOn ? 'light' : 'dark'}`}>Devero Corp.</a>
+    </p>
   </footer>
 )

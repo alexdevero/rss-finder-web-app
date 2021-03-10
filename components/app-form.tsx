@@ -11,7 +11,7 @@ export const AppForm = (props: AppFormUI) => (
       name="urlInput"
       id="urlInput"
       className="form-control"
-      placeholder="Enter website URL (without http:// or https://)"
+      placeholder="Website URL"
       aria-label="Website URL"
       aria-describedby="urlInput"
       defaultValue={props.websiteURL}

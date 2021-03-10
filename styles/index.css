@@ -22,6 +22,39 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Light mode styles */
+.mode-light {
+  background-color: #f8f9fa;
+}
+
+/* Dark mode styles */
+.mode-dark {
+  background-color: #363636;
+  color: rgba(255, 255, 255, .85);
+}
+
+.mode-dark .form-control,
+.mode-dark .input-group-text {
+  color: #eee;
+  background-color: #333;
+}
+
+.mode-dark ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: rgb(170, 170, 170, .7);
+}
+
+.mode-dark ::-moz-placeholder { /* Firefox 19+ */
+  color: rgb(170, 170, 170, .7);
+}
+
+.mode-dark :-ms-input-placeholder { /* IE 10+ */
+  color: rgb(170, 170, 170, .7);
+}
+
+.mode-dark :-moz-placeholder { /* Firefox 18- */
+  color: rgb(170, 170, 170, .7);
+}
+
 /* Loader styles */
 .loader {
   display: inline-block;
